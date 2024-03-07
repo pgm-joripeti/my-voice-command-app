@@ -1,0 +1,1 @@
+start application with node server.js

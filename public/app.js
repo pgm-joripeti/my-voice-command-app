@@ -31,7 +31,7 @@ async function init() {
             const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
-            if(result.scores[i] > 0.75) { // Using the specified threshold
+            if(result.scores[i] > 0.95) { // Using the specified threshold
                 // Send the recognized command to the Node.js backend
                 fetch('http://localhost:3000/open-app', {
                     method: 'POST',
@@ -49,7 +49,7 @@ async function init() {
         }
     }, {
         includeSpectrogram: true, 
-        probabilityThreshold: 0.95,
+        probabilityThreshold: 0.05,
         invokeCallbackOnNoiseAndUnknown: true,
         overlapFactor: .75
     });

@@ -25,16 +25,12 @@ app.post('/open-app', (req, res) => {
         res.json({ message: 'Duplicate command ignored' });
         return;
     }
-
     console.log(`Received command to open: ${command}`);
-    // Other switch-case logic...
-
     // Update the last command and its time after processing
     lastCommand = command;
     lastCommandTime = currentTime;
 
     let systemCommand;
-
     switch (command.toLowerCase()) {
         case 'excel':
             systemCommand = 'open -a "Microsoft Excel"';
@@ -45,7 +41,7 @@ app.post('/open-app', (req, res) => {
         case 'notes':
             systemCommand = 'open -a "Notities"';
             break;
-        case 'obs':
+        case 'obs': 
             systemCommand = 'open -a "OBS"';
             break;
         case 'skype':
@@ -58,10 +54,10 @@ app.post('/open-app', (req, res) => {
             systemCommand = 'open -a "WhatsApp"';
             break;
         case 'ableton':
-            systemCommand = 'open -a "Ableton Live 10 Suite"'; // Adjust according to your version
+            systemCommand = 'open -a "Ableton Live 10 Suite"'; 
             break;
         case 'analyser':
-            systemCommand = 'open -a "FluxAnalyzer"'; // Adjust according to your version
+            systemCommand = 'open -a "FluxAnalyzer"'; 
             break;
         case 'audio hijack':
             systemCommand = 'open -a "Audio Hijack"';
